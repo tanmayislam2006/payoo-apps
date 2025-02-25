@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payoo Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="../image/payoo.png" type="image/x-icon">
+    <style>
+        .font {
+            font-family: "Outfit", serif;
+        }
+    </style>
+</head>
+
+<body class="font  bg-slate-800">
+    <section class="bg-gray-100 max-w-md  mx-auto my-2 rounded-md">
+        <header class="py-4">
+            <div class="relative">
+                <div class="absolute left-16"><img src="../image/bg.png" alt=""></div>
+                <div class="absolute left-48 top-9"><img src="../image/Group.png" alt=""></div>
+            </div>
+        </header>
+        <div class="flex mx-auto items-center justify-center min-h-screen w-96 my-10">
+            <form class="bg-white p-8 rounded-3xl shadow-lg w-72">
+                <div class="flex  relative w-14 h-14">
+                    <img src="../image/payoo.png" alt="" class="">
+                    <p class=" absolute top-2 left-16 text-3xl font-bold text-gray-800 text-center mb-6">Payoo</p>
+                </div>
+                <fieldset class="relative mb-4">
+                    <label class="font-semibold text-gray-600 my-3">Account Number</label>
+                    <input type="number" placeholder="Account Number" id="account-number"
+                        class="w-full my-3 pl-8 pr-3 py-2 shadow-md border-gray-300 focus:outline-[#0874F2]  rounded-lg  " 
+                        required>
+
+                    <label class="font-semibold text-gray-600 my-3">Type Your PIN</label>
+                    <input placeholder="PIN" id="pin"
+                        class="w-full my-3 pl-8 pr-3 py-2 shadow-md border-gray-300 focus:outline-[#0874F2] rounded-lg"
+                        type="number" required>
+                </fieldset>
+
+                <button id="log-in-btn"
+                    class="w-full bg-[#0874F2] text-white py-2 rounded-lg font-medium  transition duration-300"
+                    type="submit">
+                    Login
+                </button>
+
+
+            </form>
+        </div>
+    </section>
+    <script src="../js-file/login.js"></script>
+</body>
+
+</html>

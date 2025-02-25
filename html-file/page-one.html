@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payoo Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="../image/payoo.png" type="image/x-icon">
+    <style>
+        .font {
+            font-family: "Outfit", serif;
+        }
+    </style>
+</head>
+
+<body class="font  bg-slate-800">
+    <section class="bg-gray-100 max-w-md  mx-auto  rounded-md ">
+        <div class=" mx-auto min-h-screen w-96 py-6 ">
+            <div class="flex justify-between py-3 border-b-2 ">
+                <!-- logo and blance -->
+                <div id="home" class="flex items-center gap-1 cursor-pointer">
+                    <div class="w-14 h-14"><img src="../image/payoo.png" alt=""></div>
+                    <div class="">
+                        <h3 class="text-lg font-bold">$ <span id="balance" class="">1000</span></h3>
+                        <p class="text-gray-400">Avialable Balance</p>
+                    </div>
+                </div>
+                <!-- button -->
+                <div class="">
+                    <button id="log-out"
+                        class="flex gap-1 border-2 rounded-lg border-[#E9E9E9] py-2 px-4 text-gray-500">
+                        <img src="https://img.icons8.com/windows/25/exit.png" alt="">Log Out</button>
+                </div>
+            </div>
+            <div class="">
+                <p class="font-bold text-2xl flex my-2"><img src="https://img.icons8.com/emoji/30/fire.png"
+                        alt="">Welcome to Payoo</p>
+                <p class="text-gray-500 my-2">Enjoy easy and convenient financial services with us. Cashout charge is
+                    low and. </p>
+            </div>
+            <!-- card div  -->
+            <div class="grid grid-cols-3 my-2 gap-2">
+                <!-- add money -->
+                <div id="money-add"
+                    class="border border-[#E9E9E9] rounded-md flex flex-col justify-center items-center cursor-pointer hover:border hover:border-blue-500 hover:text-blue-600 ">
+                    <!-- icon -->
+                    <div class="my-2"><img src="../image/wallet1.png" alt=""></div>
+                    <p class="text-gray-500 my-1">Add Money</p>
+                </div>
+                <!-- cash out -->
+                <div id="cash-out-money"
+                    class="border border-[#E9E9E9] rounded-md flex flex-col justify-center items-center cursor-pointer hover:border hover:border-blue-500 hover:text-blue-600">
+                    <!-- icon -->
+                    <div class="my-2"><img src="../image/send1.png" alt=""></div>
+                    <p class="text-gray-500 my-1">Cash Out</p>
+                </div>
+                <!-- transfer Money -->
+                <div id="transfer-money"
+                    class="border border-[#E9E9E9] rounded-md flex flex-col justify-center items-center cursor-pointer hover:border hover:border-blue-500 hover:text-blue-600">
+                    <!-- icon -->
+                    <div class="my-2"><img src="../image/money1.png" alt=""></div>
+                    <p class="text-gray-500 my-1">Send Money</p>
+                </div>
+                <!-- bonus -->
+                <div id="get-bonus"
+                    class="border border-[#E9E9E9] rounded-md flex flex-col justify-center items-center cursor-pointer hover:border hover:border-blue-500 hover:text-blue-600">
+                    <!-- icon -->
+                    <div class="my-2"><img src="../image/bonus1.png" alt=""></div>
+                    <p class="text-gray-500 my-1">Bonus</p>
+                </div>
+                <!-- transiction -->
+                <div id="transiction"
+                    class="border border-[#E9E9E9] rounded-md flex flex-col justify-center items-center cursor-pointer hover:border hover:border-blue-500 hover:text-blue-600">
+                    <!-- icon -->
+                    <div class="my-2"><img src="../image/transaction1.png" alt=""></div>
+                    <p class="text-gray-500 my-1">Transiction</p>
+                </div>
+                <!-- pay bill -->
+                <div id="payBill"
+                    class="border border-[#E9E9E9] rounded-md flex flex-col justify-center items-center cursor-pointer hover:border hover:border-blue-500 hover:text-blue-600">
+                    <!-- icon -->
+                    <div class="my-2"><img src="../image/purse1.png" alt=""></div>
+                    <p class="text-gray-500 my-1">Pay Bill</p>
+                </div>
+            </div>
+            <!-- ------------------------------------------ -->
+            <div class="flex items-center justify-center my-5" id="explore">
+                <h1 class="text-xl font-bold">Explore Payoo</h1>
+            </div>
+            <!-- ------------------------------------------ -->
+            <!-- lasted payment  -->
+            <div id="payment" class=" hidden my-3 ">
+                <!-- heading  -->
+                <div class="flex justify-between">
+                    <h3 class="font-bold">Lasted Payment</h3>
+                    <p class="text-gray-500">Veiw All</p>
+                </div>
+                <!-- card 1 -->
+                <div class="flex justify-between border border-[#E9E9E9] p-2 rounded-lg my-3">
+                    <div class="flex gap-2">
+                        <!-- image  -->
+                        <div class="bg-gray-300 flex justify-center items-center rounded-full">
+                            <div class="mx-3"><img src="../image/wallet1.png" alt=""></div>
+                        </div>
+                        <!-- text  -->
+                        <div class="">
+                            <h3 class="font-bold">Bank Deposit</h3>
+                            <time datetime="25-02-2025">Today 22:00</time>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center"><img
+                            src="https://img.icons8.com/windows/35/menu-2.png" alt=""></div>
+                </div>
+                <!-- card 1 -->
+                <div class="flex justify-between border border-[#E9E9E9] p-2 rounded-lg my-3">
+                    <div class="flex gap-2">
+                        <!-- image  -->
+                        <div class="bg-gray-300 flex justify-center items-center rounded-full">
+                            <div class="mx-3"><img src="../image/wallet1.png" alt=""></div>
+                        </div>
+                        <!-- text  -->
+                        <div class="">
+                            <h3 class="font-bold">Bank Deposit</h3>
+                            <time datetime="25-02-2025">Today 22:00</time>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center"><img
+                            src="https://img.icons8.com/windows/35/menu-2.png" alt=""></div>
+                </div>
+                <!-- card 1 -->
+                <div class="flex justify-between border border-[#E9E9E9] p-2 rounded-lg my-3">
+                    <div class="flex gap-2">
+                        <!-- image  -->
+                        <div class="bg-gray-300 flex justify-center items-center rounded-full">
+                            <div class="mx-3"><img src="../image/wallet1.png" alt=""></div>
+                        </div>
+                        <!-- text  -->
+                        <div class="">
+                            <h3 class="font-bold">Bank Deposit</h3>
+                            <time datetime="25-02-2025">Today 22:00</time>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center"><img
+                            src="https://img.icons8.com/windows/35/menu-2.png" alt=""></div>
+                </div>
+                <!-- card 1 -->
+                <div class="flex justify-between border border-[#E9E9E9] p-2 rounded-lg my-3">
+                    <div class="flex gap-2">
+                        <!-- image  -->
+                        <div class="bg-gray-300 flex justify-center items-center rounded-full">
+                            <div class="mx-3"><img src="../image/wallet1.png" alt=""></div>
+                        </div>
+                        <!-- text  -->
+                        <div class="">
+                            <h3 class="font-bold">Bank Deposit</h3>
+                            <time datetime="25-02-2025">Today 22:00</time>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center"><img
+                            src="https://img.icons8.com/windows/35/menu-2.png" alt=""></div>
+                </div>
+
+            </div>
+            <!-- ------------------------------------------ -->
+            <!-- add money -->
+            <div class="hidden" id="add-money-pop">
+                <!-- heading  -->
+                <div class="flex justify-between">
+                    <h3 class="font-bold">Add Money</h3>
+                    <p class="text-gray-500">Veiw All</p>
+                </div>
+                <div class=" mx-auto  w-96 my-1">
+                    <form class="bg-white p-8 rounded-3xl shadow-lg w-96">
+                        <fieldset class="relative mb-4">
+                            <label class="font-semibold text-gray-600 my-3">Select Bank</label>
+                            <div class="">
+                                <select
+                                    class="w-full border focus:outline-[#0874F2]  pl-8 pr-3 py-2 rounded-lg shadow-sm "
+                                    required>
+                                    <option disabled selected>Pick one</option>
+                                    <option value="bkash">Bkash</option>
+                                    <option value="nagad">Nagad</option>
+                                    <option value="rocket">Rocket</option>
+                                    <option value="upay">Upay</option>
+                                </select>
+                            </div>
+
+                            <label class="font-semibold text-gray-600 my-3">Account Number</label>
+                            <input value="01997337756" type="number" placeholder="Account Number" id="account-number"
+                                class="w-full border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2]  rounded-lg  "
+                                required>
+                            <label class="font-semibold text-gray-600 my-3">Amount</label>
+                            <input value="10" type="number" placeholder="Amount" id="amount"
+                                class="w-full border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2]  rounded-lg  "
+                                required>
+
+                            <label class="font-semibold text-gray-600 my-3">Type Your PIN</label>
+                            <input value="4680" placeholder="PIN" id="pin"
+                                class="w-full  border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2] rounded-lg"
+                                type="number" required>
+                        </fieldset>
+
+                        <button id="add-money"
+                            class="w-full bg-[#0874F2] text-white py-2 rounded-lg font-medium  transition duration-300"
+                            type="submit">
+                            Add Money
+                        </button>
+
+
+                    </form>
+                </div>
+            </div>
+            <!-- ----------------------------------------- -->
+            <!-- Cashout -->
+            <div id="cashout" class="hidden">
+                <!-- heading  -->
+                <h3 class="font-bold">Cash Out</h3>
+                <div class=" mx-auto  w-96 my-1">
+                    <form class="bg-white p-8 rounded-3xl shadow-lg w-96">
+                        <fieldset class="relative mb-4">
+                            <label class="font-semibold text-gray-600 my-3">Agent Number</label>
+                            <input value="01997337756" type="number" placeholder="Agent number" id="agent-number"
+                                class="w-full border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2]  rounded-lg  "
+                                required>
+                            <label class="font-semibold text-gray-600 my-3">Amount</label>
+                            <input value="10" type="number" placeholder="Amount" id="cashout-amount"
+                                class="w-full border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2]  rounded-lg  "
+                                required>
+
+                            <label class="font-semibold text-gray-600 my-3">Type Your PIN</label>
+                            <input value="4680" placeholder="PIN" id="cashout-pin"
+                                class="w-full  border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2] rounded-lg"
+                                type="number" required>
+                        </fieldset>
+
+                        <button id="cashout-money"
+                            class="w-full bg-[#0874F2] text-white py-2 rounded-lg font-medium  transition duration-300"
+                            type="submit">
+                            Cash Out
+                        </button>
+
+
+                    </form>
+                </div>
+            </div>
+            <!-- ----------------------------------------- -->
+            <!-- send money -->
+            <div id="sendMoney" class="hidden">
+                <!-- heading  -->
+                <h3 class="font-bold">Send Money</h3>
+                <div class=" mx-auto  w-96 my-1">
+                    <form class="bg-white p-8 rounded-3xl shadow-lg w-96">
+                        <fieldset class="relative mb-4">
+                            <label class="font-semibold text-gray-600 my-3">Sender Account Number</label>
+                            <input value="01997337756" type="number" placeholder="Agent number" id="sender-number"
+                                class="w-full border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2]  rounded-lg  "
+                                required>
+                            <label class="font-semibold text-gray-600 my-3">Amount</label>
+                            <input value="100" type="number" placeholder="Amount" id="send-amount"
+                                class="w-full border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2]  rounded-lg  "
+                                required>
+
+                            <label class="font-semibold text-gray-600 my-3">Type Your PIN</label>
+                            <input value="4680" placeholder="PIN" id="send-pin"
+                                class="w-full  border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2] rounded-lg"
+                                type="number" required>
+                        </fieldset>
+
+                        <button id="send-money"
+                            class="w-full bg-[#0874F2] text-white py-2 rounded-lg font-medium  transition duration-300"
+                            type="submit">
+                            Send Money
+                        </button>
+
+
+                    </form>
+                </div>
+            </div>
+            <!-- ----------------------------------------- -->
+            <!-- bonus money -->
+            <div id="bonus-money" class="hidden">
+                <!-- heading  -->
+                <h3 class="font-bold">Get Bonus</h3>
+                <div class=" mx-auto  w-96 my-1">
+                    <form class="bg-white p-8 rounded-3xl shadow-lg w-96">
+                        <fieldset class="relative mb-4">
+
+
+
+                            <label class="font-semibold text-gray-600 my-3">Enter Your Copun</label>
+                            <input value="" type="number" placeholder="type here" id="bonus-amount"
+                                class="w-full border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2]  rounded-lg  "
+                                required>
+
+                        </fieldset>
+
+                        <button id="add-bonus-money"
+                            class="w-full bg-[#0874F2] text-white py-2 rounded-lg font-medium  transition duration-300"
+                            type="submit">
+                            Get Bonus
+                        </button>
+
+
+                    </form>
+                </div>
+
+            </div>
+            <!-- ----------------------------------------- -->
+            <!-- paybill -->
+            <div id="bill-pay" class="hidden">
+                <!-- heading  -->
+                <h3 class="font-bold">Pay Bill</h3>
+                <div class=" mx-auto  w-96 my-1">
+                    <form class="bg-white p-8 rounded-3xl shadow-lg w-96">
+                        <fieldset class="relative mb-4">
+                            <label class="font-semibold text-gray-600 my-3">Select Bank</label>
+                            <div class="">
+                                <select
+                                    class="w-full border focus:outline-[#0874F2]  pl-8 pr-3 py-2 rounded-lg shadow-sm "
+                                    required>
+                                    <option disabled selected>Pick one</option>
+                                    <option value="bkash">Bkash</option>
+                                    <option value="nagad">Nagad</option>
+                                    <option value="rocket">Rocket</option>
+                                    <option value="upay">Upay</option>
+                                </select>
+                            </div>
+                            <label class="font-semibold text-gray-600 my-3">Biller Number</label>
+                            <input value="01997337756" type="number" placeholder="Agent number" id="biller-number"
+                                class="w-full border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2]  rounded-lg  "
+                                required>
+                            <label class="font-semibold text-gray-600 my-3">Amount</label>
+                            <input value="10" type="number" placeholder="Amount" id="pay-amount"
+                                class="w-full border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2]  rounded-lg  "
+                                required>
+
+                            <label class="font-semibold text-gray-600 my-3">Type Your PIN</label>
+                            <input value="4680" placeholder="PIN" id="pay-pin"
+                                class="w-full  border border-[#E9E9E9] my-3 pl-8 pr-3 py-2 shadow-sm border-gray-300 focus:outline-[#0874F2] rounded-lg"
+                                type="number" required>
+                        </fieldset>
+
+                        <button id="pay-now"
+                            class="w-full bg-[#0874F2] text-white py-2 rounded-lg font-medium  transition duration-300"
+                            type="submit">
+                            Pay Now
+                        </button>
+
+
+                    </form>
+                </div>
+            </div>
+
+
+    </section>
+    <script src="../js-file/pageOne.js"></script>
+</body>
+
+</html>
