@@ -9,18 +9,42 @@ document.getElementById("add-money")
     .addEventListener('click',
         function (event) {
             event.preventDefault();
-            const pin = document.getElementById('pin').value;
-            const convertPin = parseInt(pin);
+            const pin = getElementById('pin');
             const accountNumber = document.getElementById("account-number").value;
-            const amount = document.getElementById("amount").value;
-            const convertAmount = parseFloat(amount);
-            const balance = document.getElementById("balance");
-            const mainBalance = parseFloat(balance.innerText);
+            const amount = getElementById("amount");
+            const balance = getElementByIdText("balance");
+            let now = new Date();
+            let datetime = now.toLocaleDateString();
+            let timeString = now.toLocaleTimeString();
+
+            if (amount < 0) {
+                return alert("amount can not be negative")
+
+            }
             if (accountNumber.length == 11) {
-                if (convertPin == 4680) {
-                    const sum = mainBalance + convertAmount;
-                    console.log(sum);
-                    balance.innerText = sum
+                if (pin == 4680) {
+                    const sum = balance + amount;
+                    changeInnerText("balance", sum)
+                    const history = document.getElementById("payment");
+                    const div = document.createElement("div");
+                    div.innerHTML = `                <div class="flex justify-between border border-[#E9E9E9] p-2 rounded-lg my-3">
+                    <div class="flex gap-2">
+                        <!-- image  -->
+                        <div class=" flex justify-center items-center ">
+                            <div class="mx-3"><img src="../image/wallet1.png" alt=""></div>
+                        </div>
+                        <!-- text  -->
+                        <div class="">
+                            <h3 class="font-bold">Bank Deposit</h3>
+                            <p>From ${accountNumber}</p>
+                            <p>Amount ${amount}</p>
+                            <time datetime="25-02-2025">${datetime} ${timeString}</time>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center"><img
+                            src="https://img.icons8.com/windows/35/menu-2.png" alt=""></div>
+                </div>`;
+                    history.appendChild(div);
                 }
                 else {
                     alert("wrong pin")
@@ -35,18 +59,24 @@ document.getElementById("add-money")
 document.getElementById("cashout-money")
     .addEventListener("click", function (event) {
         event.preventDefault();
-        const pin = document.getElementById('cashout-pin').value;
-        const convertPin = parseInt(pin);
+        const pin = getElementById('cashout-pin');
         const accountNumber = document.getElementById("agent-number").value;
-        const amount = document.getElementById("cashout-amount").value;
-        const convertAmount = parseFloat(amount);
-        const balance = document.getElementById("balance");
-        const mainBalance = parseFloat(balance.innerText);
-        if (accountNumber.length == 11) {
-            if (convertPin == 4680) {
-                const sum = mainBalance - convertAmount;
-                console.log(sum);
-                balance.innerText = sum
+        const amount = getElementById("cashout-amount");
+        const balance = getElementByIdText("balance");
+        const now = new Date();
+        const datetime = now.toLocaleDateString();
+        const timeString = now.toLocaleTimeString();
+        if (amount < 0) {
+            return alert("amount can not be negative")
+        }
+        if (balance < amount) {
+            return alert("insufficient balance")
+        }
+        if (accountNumber.length === 11) {
+            if (pin == 4680) {
+                const sum = balance - amount;
+                changeInnerText("balance", sum)
+
             }
             else {
                 alert("wrong pin")
@@ -62,17 +92,21 @@ document.getElementById("cashout-money")
 document.getElementById("send-money")
     .addEventListener("click", function (event) {
         event.preventDefault();
-        const pin = document.getElementById('send-pin').value;
-        const convertPin = parseInt(pin);
+        const pin = getElementById('send-pin');
         const accountNumber = document.getElementById("sender-number").value;
-        const amount = document.getElementById("send-amount").value;
-        const convertAmount = parseFloat(amount);
-        const balance = document.getElementById("balance");
-        const mainBalance = parseFloat(balance.innerText);
-        if (accountNumber.length == 11) {
-            if (convertPin == 4680) {
-                const sum = mainBalance - convertAmount;
-                balance.innerText = sum
+        const amount = getElementById("send-amount");
+        const balance = getElementByIdText("balance");
+        if (amount < 0) {
+            return alert("amount can not be negative")
+        }
+        if (balance < amount) {
+            return alert("insufficient balance")
+        }
+        if (accountNumber.length === 11) {
+            if (pin == 4680) {
+                const sum = balance - amount;
+                changeInnerText("balance", sum)
+
             }
             else {
                 alert("wrong pin")
@@ -88,12 +122,13 @@ document.getElementById("send-money")
 document.getElementById("add-bonus-money")
     .addEventListener("click", function (event) {
         event.preventDefault();
-        const amount = document.getElementById("bonus-amount").value;
-        const convertAmount = parseFloat(amount);
-        const balance = document.getElementById("balance");
-        const mainBalance = parseFloat(balance.innerText);
-        const sum = mainBalance + convertAmount;
-        balance.innerText = sum
+        const amount = getElementById("bonus-amount");
+        const balance = getElementByIdText("balance");
+        if (amount < 0) {
+            return alert("amount can not be negative")
+        }
+        const sum = balance + amount;
+        changeInnerText("balance", sum)
 
 
     })
@@ -101,18 +136,21 @@ document.getElementById("add-bonus-money")
 document.getElementById("pay-now")
     .addEventListener("click", function (event) {
         event.preventDefault();
-        const pin = document.getElementById('pay-pin').value;
-        const convertPin = parseInt(pin);
+        const pin = getElementById('pay-pin');
         const accountNumber = document.getElementById("biller-number").value;
-        const amount = document.getElementById("pay-amount").value;
-        const convertAmount = parseFloat(amount);
-        const balance = document.getElementById("balance");
-        const mainBalance = parseFloat(balance.innerText);
-        if (accountNumber.length == 11) {
-            if (convertPin == 4680) {
-                const sum = mainBalance - convertAmount;
-                console.log(sum);
-                balance.innerText = sum
+        const amount = getElementById("pay-amount");
+        const balance = getElementByIdText("balance");
+        if (amount < 0) {
+            return alert("amount can not be negative")
+        }
+        if (balance < amount) {
+            return alert("insufficient balance")
+        }
+        if (accountNumber.length === 11) {
+            if (pin == 4680) {
+                const sum = balance - amount;
+                changeInnerText("balance", sum)
+
             }
             else {
                 alert("wrong pin")
@@ -129,125 +167,74 @@ document.getElementById("pay-now")
 
 document.getElementById("payBill")
     .addEventListener("click", function (event) {
-        const payBill=document.getElementById("bill-pay");
-        payBill.classList.remove('hidden')
-        const bonusMoney = document.getElementById("bonus-money");
-        bonusMoney.classList.add('hidden');
-        const transferMoney = document.getElementById("sendMoney")
-        transferMoney.classList.add("hidden")
-        const cashOut = document.getElementById("cashout");
-        cashOut.classList.add("hidden");
-        const addMoney = document.getElementById("add-money-pop");
-        addMoney.classList.add('hidden');
-        const payment = document.getElementById('payment');
-        payment.classList.add('hidden')
-        const explore = document.getElementById('explore');
-        explore.classList.add('hidden');
+        const payBill = document.getElementById("bill-pay");
+        displayRemove("bill-pay", "hidden");
+        displayAdd("payment", "hidden");
+        displayAdd("bonus-money", "hidden");
+        displayAdd("sendMoney", "hidden");
+        displayAdd("cashout", "hidden");
+        displayAdd("add-money-pop", "hidden");
+        displayAdd("explore", "hidden");
     });
 document.getElementById("get-bonus")
     .addEventListener("click", function (event) {
-        const bonusMoney = document.getElementById("bonus-money");
-        bonusMoney.classList.remove('hidden');
-        // 
-        const payBill=document.getElementById("bill-pay");
-        payBill.classList.add('hidden');
-        const transferMoney = document.getElementById("sendMoney")
-        transferMoney.classList.add("hidden")
-        const cashOut = document.getElementById("cashout");
-        cashOut.classList.add("hidden");
-        const addMoney = document.getElementById("add-money-pop");
-        addMoney.classList.add('hidden');
-        const payment = document.getElementById('payment');
-        payment.classList.add('hidden')
-        const explore = document.getElementById('explore');
-        explore.classList.add('hidden');
+        displayRemove("bonus-money", "hidden");
+        displayAdd("payment", "hidden");
+        displayAdd("bill-pay", "hidden");
+        displayAdd("sendMoney", "hidden");
+        displayAdd("cashout", "hidden");
+        displayAdd("add-money-pop", "hidden");
+        displayAdd("explore", "hidden");
     });
 document.getElementById("transfer-money")
     .addEventListener("click", function (event) {
-        const transferMoney = document.getElementById("sendMoney")
-        transferMoney.classList.remove("hidden")
-        // 
-        const payBill=document.getElementById("bill-pay");
-        payBill.classList.add('hidden');
-        const bonusMoney = document.getElementById("bonus-money");;
-        bonusMoney.classList.add('hidden');
-        const cashOut = document.getElementById("cashout");
-        cashOut.classList.add("hidden");
-        const addMoney = document.getElementById("add-money-pop");
-        addMoney.classList.add('hidden');
-        const payment = document.getElementById('payment');
-        payment.classList.add('hidden')
-        const explore = document.getElementById('explore');
-        explore.classList.add('hidden');
+        displayRemove("sendMoney", "hidden");
+        displayAdd("payment", "hidden");
+        displayAdd("bill-pay", "hidden");
+        displayAdd("bonus-money", "hidden");
+        displayAdd("cashout", "hidden");
+        displayAdd("add-money-pop", "hidden");
+        displayAdd("explore", "hidden");
     });
 document.getElementById("cash-out-money")
     .addEventListener("click", function (event) {
-        const cashOut = document.getElementById("cashout");
-        cashOut.classList.remove("hidden");
-        // 
-        const payBill=document.getElementById("bill-pay");
-        payBill.classList.add('hidden');
-        const bonusMoney = document.getElementById("bonus-money");;
-        bonusMoney.classList.add('hidden');
-        const transferMoney = document.getElementById("sendMoney")
-        transferMoney.classList.add("hidden");
-        const addMoney = document.getElementById("add-money-pop");
-        addMoney.classList.add('hidden');
-        const payment = document.getElementById('payment');
-        payment.classList.add('hidden')
-        const explore = document.getElementById('explore');
-        explore.classList.add('hidden');
+        displayRemove("cashout", "hidden");
+        displayAdd("payment", "hidden");
+        displayAdd("bill-pay", "hidden");
+        displayAdd("bonus-money", "hidden");
+        displayAdd("sendMoney", "hidden");
+        displayAdd("add-money-pop", "hidden");
+        displayAdd("explore", "hidden");
     });
 document.getElementById("money-add")
     .addEventListener("click", function (event) {
-        const addMoney = document.getElementById("add-money-pop");
-        addMoney.classList.remove('hidden');
-        // 
-        const payBill=document.getElementById("bill-pay");
-        payBill.classList.add('hidden');
-        const bonusMoney = document.getElementById("bonus-money");;
-        bonusMoney.classList.add('hidden');
-        const transferMoney = document.getElementById("sendMoney")
-        transferMoney.classList.add("hidden");
-        const cashOut = document.getElementById("cashout");
-        cashOut.classList.add("hidden");
-        const payment = document.getElementById('payment');
-        payment.classList.add('hidden')
-        const explore = document.getElementById('explore');
-        explore.classList.add('hidden');
+        displayRemove("add-money-pop", "hidden")
+        displayAdd("cashout", "hidden");
+        displayAdd("bill-pay", "hidden");
+        displayAdd("bonus-money", "hidden");
+        displayAdd("sendMoney", "hidden");
+        displayAdd("payment", "hidden");
+        displayAdd("explore", "hidden");
     });
+
 document.getElementById("transiction")
     .addEventListener("click", function (event) {
-        const payment = document.getElementById('payment');
-        payment.classList.remove('hidden');
-        // 
-        const payBill=document.getElementById("bill-pay");
-        payBill.classList.add('hidden');
-        const bonusMoney = document.getElementById("bonus-money");;
-        bonusMoney.classList.add('hidden');
-        const transferMoney = document.getElementById("sendMoney")
-        transferMoney.classList.add("hidden");
-        const cashOut = document.getElementById("cashout");
-        cashOut.classList.add("hidden");
-        const addMoney = document.getElementById("add-money-pop");
-        addMoney.classList.add('hidden');
-        const explore = document.getElementById('explore');
-        explore.classList.add('hidden');
+        displayRemove("payment", "hidden");
+        displayAdd("bill-pay", "hidden");
+        displayAdd("bonus-money", "hidden");
+        displayAdd("sendMoney", "hidden");
+        displayAdd("cashout", "hidden");
+        displayAdd("add-money-pop", "hidden");
+        displayAdd("explore", "hidden");
     });
-    document.getElementById('home')
-    .addEventListener("click",function(event){
-        const explore = document.getElementById('explore');
-        explore.classList.remove('hidden');
-        const payBill=document.getElementById("bill-pay");
-        payBill.classList.add('hidden')
-        const bonusMoney = document.getElementById("bonus-money");
-        bonusMoney.classList.add('hidden');
-        const transferMoney = document.getElementById("sendMoney")
-        transferMoney.classList.add("hidden")
-        const cashOut = document.getElementById("cashout");
-        cashOut.classList.add("hidden");
-        const addMoney = document.getElementById("add-money-pop");
-        addMoney.classList.add('hidden');
-        const payment = document.getElementById('payment');
-        payment.classList.add('hidden')
+
+document.getElementById('home')
+    .addEventListener("click", function (event) {
+        displayRemove("explore", "hidden");
+        displayAdd("payment", "hidden");
+        displayAdd("bill-pay", "hidden");
+        displayAdd("bonus-money", "hidden");
+        displayAdd("sendMoney", "hidden");
+        displayAdd("cashout", "hidden");
+        displayAdd("add-money-pop", "hidden");
     })
