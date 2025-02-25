@@ -1,7 +1,7 @@
 document.getElementById("log-out")
     .addEventListener('click',
         function () {
-            window.location.href = "./loging-page.html"
+            window.location.href = "./index1.html"
         }
     );
 // add money

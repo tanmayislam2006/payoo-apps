@@ -8,7 +8,7 @@ document.getElementById("log-in-btn")
             const accountNumber = document.getElementById("account-number").value;
             if (accountNumber.length == 11) {
                 if (convertPin == 4680) {
-                    window.location.href = "./page-one.html"
+                    window.location.href = "./index.html"
                 }
                 else {
                     alert("wrong pin")
