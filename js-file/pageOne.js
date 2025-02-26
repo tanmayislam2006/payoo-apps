@@ -16,6 +16,7 @@ document.getElementById("add-money")
             let now = new Date();
             let datetime = now.toLocaleDateString();
             let timeString = now.toLocaleTimeString();
+            const id=Math.floor(100000 + Math.random() * 900000);
 
             if (amount < 0) {
                 return alert("amount can not be negative")
@@ -38,6 +39,7 @@ document.getElementById("add-money")
                             <h3 class="font-bold">Bank Deposit</h3>
                             <p>From ${accountNumber}</p>
                             <p>Amount ${amount}</p>
+                            <p>ID ${id}</p>
                             <time datetime="25-02-2025">${datetime} ${timeString}</time>
                         </div>
                     </div>
@@ -66,6 +68,7 @@ document.getElementById("cashout-money")
         const now = new Date();
         const datetime = now.toLocaleDateString();
         const timeString = now.toLocaleTimeString();
+        const id=Math.floor(100000 + Math.random() * 900000);
         if (amount < 0) {
             return alert("amount can not be negative")
         }
@@ -76,6 +79,27 @@ document.getElementById("cashout-money")
             if (pin == 4680) {
                 const sum = balance - amount;
                 changeInnerText("balance", sum)
+                const history = document.getElementById("payment");
+                const div = document.createElement("div");
+                div.innerHTML = `                <div class="flex justify-between border border-[#E9E9E9] p-2 rounded-lg my-3">
+                <div class="flex gap-2">
+                    <!-- image  -->
+                    <div class=" flex justify-center items-center ">
+                        <div class="mx-3"><img src="../image/send1.png" alt=""></div>
+                    </div>
+                    <!-- text  -->
+                    <div class="">
+                        <h3 class="font-bold">Cash Out</h3>
+                        <p>Agent ${accountNumber}</p>
+                        <p>Amount ${amount}</p>
+                        <p>ID ${id}</p>
+                        <time datetime="25-02-2025">${datetime} ${timeString}</time>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center"><img
+                        src="https://img.icons8.com/windows/35/menu-2.png" alt=""></div>
+            </div>`;
+                history.appendChild(div);
 
             }
             else {
@@ -96,6 +120,10 @@ document.getElementById("send-money")
         const accountNumber = document.getElementById("sender-number").value;
         const amount = getElementById("send-amount");
         const balance = getElementByIdText("balance");
+        const now = new Date();
+        const datetime = now.toLocaleDateString();
+        const timeString = now.toLocaleTimeString();
+        const id=Math.floor(100000 + Math.random() * 900000);
         if (amount < 0) {
             return alert("amount can not be negative")
         }
@@ -106,6 +134,27 @@ document.getElementById("send-money")
             if (pin == 4680) {
                 const sum = balance - amount;
                 changeInnerText("balance", sum)
+                const history = document.getElementById("payment");
+                const div = document.createElement("div");
+                div.innerHTML = `                <div class="flex justify-between border border-[#E9E9E9] p-2 rounded-lg my-3">
+                <div class="flex gap-2">
+                    <!-- image  -->
+                    <div class=" flex justify-center items-center ">
+                        <div class="mx-3"><img src="../image/money1.png" alt=""></div>
+                    </div>
+                    <!-- text  -->
+                    <div class="">
+                        <h3 class="font-bold">Send Money</h3>
+                        <p>Recever ${accountNumber}</p>
+                        <p>Amount ${amount}</p>
+                        <p>ID ${id}</p>
+                        <time datetime="25-02-2025">${datetime} ${timeString}</time>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center"><img
+                        src="https://img.icons8.com/windows/35/menu-2.png" alt=""></div>
+            </div>`;
+                history.appendChild(div);
 
             }
             else {
@@ -124,11 +173,35 @@ document.getElementById("add-bonus-money")
         event.preventDefault();
         const amount = getElementById("bonus-amount");
         const balance = getElementByIdText("balance");
+        let now = new Date();
+        let datetime = now.toLocaleDateString();
+        let timeString = now.toLocaleTimeString();
+        const id=Math.floor(100000 + Math.random() * 900000);
         if (amount < 0) {
             return alert("amount can not be negative")
         }
         const sum = balance + amount;
         changeInnerText("balance", sum)
+        const history = document.getElementById("payment");
+        const div = document.createElement("div");
+        div.innerHTML = `                <div class="flex justify-between border border-[#E9E9E9] p-2 rounded-lg my-3">
+        <div class="flex gap-2">
+            <!-- image  -->
+            <div class=" flex justify-center items-center ">
+                <div class="mx-3"><img src="../image/bonus1.png" alt=""></div>
+            </div>
+            <!-- text  -->
+            <div class="">
+                <h3 class="font-bold">Get Bonus</h3>
+                <p>Amount ${amount}</p>
+                <p>ID ${id}</p>
+                <time datetime="25-02-2025">${datetime} ${timeString}</time>
+            </div>
+        </div>
+        <div class="flex items-center justify-center"><img
+                src="https://img.icons8.com/windows/35/menu-2.png" alt=""></div>
+    </div>`;
+        history.appendChild(div);
 
 
     })
@@ -140,6 +213,10 @@ document.getElementById("pay-now")
         const accountNumber = document.getElementById("biller-number").value;
         const amount = getElementById("pay-amount");
         const balance = getElementByIdText("balance");
+        const now = new Date();
+        const datetime = now.toLocaleDateString();
+        const timeString = now.toLocaleTimeString();
+        const id=Math.floor(100000 + Math.random() * 900000);
         if (amount < 0) {
             return alert("amount can not be negative")
         }
@@ -150,6 +227,27 @@ document.getElementById("pay-now")
             if (pin == 4680) {
                 const sum = balance - amount;
                 changeInnerText("balance", sum)
+                const history = document.getElementById("payment");
+                const div = document.createElement("div");
+                div.innerHTML = `                <div class="flex justify-between border border-[#E9E9E9] p-2 rounded-lg my-3">
+                <div class="flex gap-2">
+                    <!-- image  -->
+                    <div class=" flex justify-center items-center ">
+                        <div class="mx-3"><img src="../image/purse1.png" alt=""></div>
+                    </div>
+                    <!-- text  -->
+                    <div class="">
+                        <h3 class="font-bold">Pay Bill</h3>
+                        <p>Biller ${accountNumber}</p>
+                        <p>Amount ${amount}</p>
+                        <p>ID ${id}</p>
+                        <time datetime="25-02-2025">${datetime} ${timeString}</time>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center"><img
+                        src="https://img.icons8.com/windows/35/menu-2.png" alt=""></div>
+            </div>`;
+                history.appendChild(div);
 
             }
             else {
@@ -167,7 +265,6 @@ document.getElementById("pay-now")
 
 document.getElementById("payBill")
     .addEventListener("click", function (event) {
-        const payBill = document.getElementById("bill-pay");
         displayRemove("bill-pay", "hidden");
         displayAdd("payment", "hidden");
         displayAdd("bonus-money", "hidden");
